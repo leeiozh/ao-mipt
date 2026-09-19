@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Заявка на площадку</title>
+  <link rel="stylesheet" href="css/main.css">
+  
+  {# Цвет сезона задаётся в админке и подменяет основной цвет бренда.
+     Все производные (кнопки, ссылки) пересчитываются сами — см. tokens.css. #}
+  <style>:root { --color-brand-500: #2f6fed; }</style>
+  
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+<div style="background:#19246a;color:#fff;padding:10px 16px;font-size:14px;
+            text-align:center;font-family:sans-serif">
+  Демонстрационная версия сайта Аэрокосмической олимпиады МФТИ.
+  Данные учебные, формы не отправляются.
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html">
+      
+      <span>АО&nbsp;МФТИ</span>
+    </a>
+    <nav class="main-nav">
+      <a href="online.html">Дистанционный этап</a>
+      <a href="offline.html">Очный тур</a>
+      <a href="lectures.html">Лекции</a>
+      <a href="archive.html">Архив задач</a>
+      <a href="news.html">Новости</a>
+    </nav>
+    <div class="user-nav">
+      
+        <a href="profile.html">Кабинет</a>
+        
+        <form onsubmit="return false" data-demo action="/accounts/logout/" class="inline-form">
+          <input type="hidden" name="csrfmiddlewaretoken" value="iFP1eZeyowDm6TwwTMaLkul23SBE8TUEWzzS3LtzTKwQjAfdi8ZvDkFfbLCsEFn1"><button type="submit" class="link-button">Выйти</button>
+        </form>
+      
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  
+  
+<h1>Заявка на проведение очного тура</h1>
+<p class="lead">Заполните форму и поставьте точку на карте. Заявку проверит администратор.</p>
+<form onsubmit="return false" data-demo class="form-wide">
+  <input type="hidden" name="csrfmiddlewaretoken" value="iFP1eZeyowDm6TwwTMaLkul23SBE8TUEWzzS3LtzTKwQjAfdi8ZvDkFfbLCsEFn1">
+  <p>
+    <label for="id_title">Название площадки:</label>
+    <input type="text" name="title" maxlength="250" required aria-describedby="id_title_helptext" id="id_title">
+    
+      <span class="helptext" id="id_title_helptext">Например: Лицей №1580, г. Москва</span>
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="id_region">Регион:</label>
+    <input type="text" name="region" maxlength="120" required id="id_region">
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="id_city">Город:</label>
+    <input type="text" name="city" maxlength="120" required id="id_city">
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="id_address">Адрес:</label>
+    <input type="text" name="address" maxlength="300" required id="id_address">
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="id_capacity">Вместимость:</label>
+    <input type="number" name="capacity" value="30" min="0" required aria-describedby="id_capacity_helptext" id="id_capacity">
+    
+      <span class="helptext" id="id_capacity_helptext">Сколько участников поместится</span>
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="id_description">Описание:</label>
+    <textarea name="description" cols="40" rows="4" aria-describedby="id_description_helptext" id="id_description">
+</textarea>
+    
+      <span class="helptext" id="id_description_helptext">Как пройти, какой вход, что взять с собой</span>
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="id_contact_name">Контактное лицо:</label>
+    <input type="text" name="contact_name" maxlength="150" id="id_contact_name">
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="id_contact_phone">Телефон:</label>
+    <input type="text" name="contact_phone" maxlength="32" id="id_contact_phone">
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="id_contact_email">E-mail:</label>
+    <input type="email" name="contact_email" maxlength="254" id="id_contact_email">
+    
+    
+      <input type="hidden" name="latitude" id="id_latitude"><input type="hidden" name="longitude" id="id_longitude">
+    
+  </p>
+  <p class="muted">Кликните по карте, чтобы отметить положение школы:</p>
+  <div id="map" data-lat-field="id_latitude" data-lon-field="id_longitude" style="height:360px"></div>
+  <p style="margin-top:16px"><button class="btn" type="submit">Отправить заявку</button></p>
+</form>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Аэрокосмическая олимпиада МФТИ — Аэрокосмическая олимпиада МФТИ VII</p>
+    <p>Вопросы: <a href="mailto:olymp@example.ru">olymp@example.ru</a></p>
+    <p><a href="privacy.html">Политика обработки персональных данных</a></p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  const el = document.getElementById('map');
+  const map = L.map(el).setView([55.75, 37.62], 4);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap' }).addTo(map);
+  let marker = null;
+  map.on('click', (e) => {
+    if (marker) marker.remove();
+    marker = L.marker(e.latlng).addTo(map);
+    document.getElementById(el.dataset.latField).value = e.latlng.lat.toFixed(6);
+    document.getElementById(el.dataset.lonField).value = e.latlng.lng.toFixed(6);
+  });
+</script>
+
+</body>
+</html>

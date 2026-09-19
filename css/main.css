@@ -1,0 +1,254 @@
+/* ==========================================================================
+   Оформление сайта.
+
+   ВНИМАНИЕ: здесь не должно быть ни одного цвета в виде #hex.
+   Все значения берутся из tokens.css. Если нужен новый цвет —
+   добавьте токен туда, а сюда поставьте var(--...).
+   ========================================================================== */
+
+@import url("tokens.css");
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--text-primary);
+  background: var(--bg-page);
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+/* --- Шапка: тёмная, как баннеры олимпиады ------------------------------- */
+
+.site-header {
+  background: var(--bg-header);
+  color: var(--text-on-dark);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  min-height: 68px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-lg);
+  color: var(--text-on-dark);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.logo img { height: 34px; width: auto; }
+
+.main-nav { display: flex; gap: var(--space-5); flex-wrap: wrap; }
+
+.main-nav a {
+  color: var(--text-on-dark-muted);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  transition: color var(--transition);
+}
+.main-nav a:hover { color: var(--text-on-dark); }
+
+.user-nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-size: var(--text-sm);
+}
+.user-nav a { color: var(--text-on-dark-muted); text-decoration: none; }
+.user-nav a:hover { color: var(--text-on-dark); }
+
+.inline-form { display: inline; }
+.link-button {
+  background: none; border: 0; padding: 0;
+  color: var(--text-on-dark-muted); cursor: pointer;
+  font-size: var(--text-sm); font-family: inherit;
+}
+.link-button:hover { color: var(--text-on-dark); }
+
+/* --- Типографика --------------------------------------------------------- */
+
+h1 { font-family: var(--font-display); font-size: var(--text-3xl); line-height: var(--leading-tight); margin: var(--space-6) 0 var(--space-2); }
+h2 { font-size: var(--text-xl); margin: var(--space-6) 0 var(--space-2); }
+h3 { font-size: var(--text-lg); margin: 0 0 var(--space-2); }
+
+a { color: var(--text-link); }
+
+.muted { color: var(--text-secondary); }
+.lead { font-size: var(--text-lg); color: var(--text-secondary); }
+.prose { max-width: var(--content-width); }
+
+/* --- Герой на главной ---------------------------------------------------- */
+
+.hero {
+  background: var(--bg-hero);
+  color: var(--text-on-dark);
+  border-radius: var(--radius-lg);
+  padding: var(--space-7) var(--space-6);
+  margin: var(--space-5) 0 var(--space-6);
+}
+.hero h1 { margin-top: 0; font-size: var(--text-4xl); }
+.hero .lead { color: var(--text-on-dark-muted); }
+.hero .deadline { color: var(--color-lavender-300); font-size: var(--text-lg); }
+
+/* --- Кнопки -------------------------------------------------------------- */
+
+.btn {
+  display: inline-block;
+  padding: var(--space-3) var(--space-5);
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--button-bg);
+  color: var(--button-text);
+  font-family: inherit;
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.btn:hover { background: var(--button-bg-hover); }
+.btn:active { background: var(--button-bg-active); }
+.btn:disabled { background: var(--color-ink-300); cursor: not-allowed; }
+
+.btn-small { padding: var(--space-2) var(--space-3); font-size: var(--text-sm); }
+
+.btn-secondary {
+  background: var(--bg-muted);
+  color: var(--text-primary);
+  border: 1px solid var(--border-default);
+}
+.btn-secondary:hover { background: var(--color-surface-alt); }
+
+/* --- Карточки ------------------------------------------------------------ */
+
+.grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.card {
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  background: var(--bg-card);
+  transition: box-shadow var(--transition);
+}
+.card:hover { box-shadow: var(--shadow-md); }
+.card a { text-decoration: none; }
+.card a:hover { text-decoration: underline; }
+
+/* --- Таблицы ------------------------------------------------------------- */
+
+table { width: 100%; border-collapse: collapse; margin: var(--space-4) 0; }
+th, td {
+  text-align: left;
+  padding: var(--space-3);
+  border-bottom: 1px solid var(--border-default);
+  font-size: var(--text-sm);
+}
+th { color: var(--text-secondary); font-weight: var(--weight-medium); }
+tbody tr:hover { background: var(--bg-muted); }
+
+/* --- Формы --------------------------------------------------------------- */
+
+form p { margin: 0 0 var(--space-4); }
+label { display: block; font-size: var(--text-sm); color: var(--text-secondary); margin-bottom: var(--space-1); }
+
+input[type=text], input[type=email], input[type=password], input[type=number],
+input[type=date], input[type=file], input[type=url], select, textarea {
+  width: 100%;
+  padding: var(--space-3);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  font-family: inherit;
+  color: var(--text-primary);
+  background: var(--bg-page);
+  transition: border-color var(--transition);
+}
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 1px;
+  border-color: var(--color-brand-500);
+}
+input[type=checkbox] { width: auto; margin-right: var(--space-2); }
+
+.helptext { font-size: var(--text-xs); color: var(--text-secondary); display: block; margin-top: var(--space-1); }
+.errorlist { font-size: var(--text-xs); color: var(--color-danger-500); list-style: none; padding: 0; margin: var(--space-1) 0 0; }
+
+.form-narrow { max-width: 480px; }
+.form-wide { max-width: var(--content-width); }
+
+/* --- Статусы и бейджи ---------------------------------------------------- */
+
+.badge {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  background: var(--bg-muted);
+  color: var(--text-secondary);
+}
+.badge.ok   { background: var(--color-success-100); color: var(--color-success-500); }
+.badge.warn { background: var(--color-warning-100); color: var(--color-warning-500); }
+.badge.err  { background: var(--color-danger-100);  color: var(--color-danger-500); }
+.badge.none { background: var(--bg-muted); color: var(--text-secondary); }
+
+.messages { list-style: none; padding: 0; margin: var(--space-4) 0; }
+.message {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--bg-muted);
+  margin-bottom: var(--space-2);
+}
+.message.error   { background: var(--color-danger-100);  color: var(--color-danger-500); }
+.message.success { background: var(--color-success-100); color: var(--color-success-500); }
+.message.warning { background: var(--color-warning-100); color: var(--color-warning-500); }
+
+/* --- Карта --------------------------------------------------------------- */
+
+#map {
+  height: 520px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-default);
+}
+
+/* --- Подвал -------------------------------------------------------------- */
+
+.site-footer {
+  background: var(--bg-footer);
+  color: var(--text-on-dark-muted);
+  margin-top: var(--space-8);
+  padding: var(--space-6) 0;
+  font-size: var(--text-sm);
+}
+.site-footer a { color: var(--color-lavender-300); }
+
+/* --- Мобильные ----------------------------------------------------------- */
+
+@media (max-width: 720px) {
+  .header-inner { gap: var(--space-3); padding: var(--space-3) 0; }
+  .user-nav { margin-left: 0; width: 100%; }
+  h1 { font-size: var(--text-2xl); }
+  .hero { padding: var(--space-5) var(--space-4); }
+  .hero h1 { font-size: var(--text-2xl); }
+  #map { height: 380px; }
+}

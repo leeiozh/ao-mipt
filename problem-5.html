@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Бессонница</title>
+  <link rel="stylesheet" href="css/main.css">
+  
+  {# Цвет сезона задаётся в админке и подменяет основной цвет бренда.
+     Все производные (кнопки, ссылки) пересчитываются сами — см. tokens.css. #}
+  <style>:root { --color-brand-500: #2f6fed; }</style>
+  
+  
+</head>
+<body>
+<div style="background:#19246a;color:#fff;padding:10px 16px;font-size:14px;
+            text-align:center;font-family:sans-serif">
+  Демонстрационная версия сайта Аэрокосмической олимпиады МФТИ.
+  Данные учебные, формы не отправляются.
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html">
+      
+      <span>АО&nbsp;МФТИ</span>
+    </a>
+    <nav class="main-nav">
+      <a href="online.html">Дистанционный этап</a>
+      <a href="offline.html">Очный тур</a>
+      <a href="lectures.html">Лекции</a>
+      <a href="archive.html">Архив задач</a>
+      <a href="news.html">Новости</a>
+    </nav>
+    <div class="user-nav">
+      
+        <a href="profile.html">Кабинет</a>
+        
+        <form onsubmit="return false" data-demo action="/accounts/logout/" class="inline-form">
+          <input type="hidden" name="csrfmiddlewaretoken" value="wE3cx1jJCMdOCsFs3zbKfbCLSE4Vpo5rHaCgMn0dsC1bd7opiiG3MsUsSOwTzbIv"><button type="submit" class="link-button">Выйти</button>
+        </form>
+      
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  
+  
+<h1>5. Бессонница</h1>
+<p class="muted">Дистанционный отборочный этап · максимум 15 баллов</p>
+
+
+
+
+
+
+
+
+<h2>Сдать решение</h2>
+
+  
+  <form onsubmit="return false" data-demo enctype="multipart/form-data" action="/online/problem/5/submit/" class="form-narrow">
+    <input type="hidden" name="csrfmiddlewaretoken" value="wE3cx1jJCMdOCsFs3zbKfbCLSE4Vpo5rHaCgMn0dsC1bd7opiiG3MsUsSOwTzbIv">
+    <p>
+    <label for="id_answer">Ответ:</label>
+    <input type="text" name="answer" maxlength="250" aria-describedby="id_answer_helptext" id="id_answer">
+    
+      <span class="helptext" id="id_answer_helptext">Для задач с числовым ответом</span>
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="id_comment">Комментарий участника:</label>
+    <textarea name="comment" cols="40" rows="3" id="id_comment">
+</textarea>
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="id_files">Файлы решения:</label>
+    <input type="file" name="files" multiple required id="id_files">
+    
+    
+      
+    
+  </p>
+    <button class="btn" type="submit">Отправить</button>
+  </form>
+  <p class="muted">Принимаются PDF, фото, код (.py, .cpp, .ipynb), данные (.txt, .csv) и .zip.</p>
+
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Аэрокосмическая олимпиада МФТИ — Аэрокосмическая олимпиада МФТИ VII</p>
+    <p>Вопросы: <a href="mailto:olymp@example.ru">olymp@example.ru</a></p>
+    <p><a href="privacy.html">Политика обработки персональных данных</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

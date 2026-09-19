@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Дистанционный этап</title>
+  <link rel="stylesheet" href="css/main.css">
+  
+  {# Цвет сезона задаётся в админке и подменяет основной цвет бренда.
+     Все производные (кнопки, ссылки) пересчитываются сами — см. tokens.css. #}
+  <style>:root { --color-brand-500: #2f6fed; }</style>
+  
+  
+</head>
+<body>
+<div style="background:#19246a;color:#fff;padding:10px 16px;font-size:14px;
+            text-align:center;font-family:sans-serif">
+  Демонстрационная версия сайта Аэрокосмической олимпиады МФТИ.
+  Данные учебные, формы не отправляются.
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html">
+      
+      <span>АО&nbsp;МФТИ</span>
+    </a>
+    <nav class="main-nav">
+      <a href="online.html">Дистанционный этап</a>
+      <a href="offline.html">Очный тур</a>
+      <a href="lectures.html">Лекции</a>
+      <a href="archive.html">Архив задач</a>
+      <a href="news.html">Новости</a>
+    </nav>
+    <div class="user-nav">
+      
+        <a href="profile.html">Кабинет</a>
+        
+        <form onsubmit="return false" data-demo action="/accounts/logout/" class="inline-form">
+          <input type="hidden" name="csrfmiddlewaretoken" value="qyYx7Fs3yz3pfzwJ8K49Kj4fxckiVDELMipYM3JiI7EFTESjpMGRnds5dp7rb44B"><button type="submit" class="link-button">Выйти</button>
+        </form>
+      
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  
+  
+<h1>Дистанционный этап</h1>
+
+  <p class="lead">Дистанционный отборочный этап. Приём решений до 10.10.2026 11:40 (МСК).</p>
+  
+
+  <table>
+    <thead><tr><th>№</th><th>Задача</th><th>Направление</th><th>Максимум</th><th>Моё решение</th></tr></thead>
+    <tbody>
+    
+      <tr>
+        <td>1</td>
+        <td><a href="problem-1.html">Туннельный гул</a></td>
+        <td class="muted">Физика</td>
+        <td>10</td>
+        <td>
+          
+            <span class="badge none">не сдано</span>
+          
+        </td>
+      </tr>
+    
+      <tr>
+        <td>2</td>
+        <td><a href="problem-2.html">Сопло</a></td>
+        <td class="muted">Физика</td>
+        <td>12</td>
+        <td>
+          
+            <span class="badge none">не сдано</span>
+          
+        </td>
+      </tr>
+    
+      <tr>
+        <td>3</td>
+        <td><a href="problem-3.html">Долина</a></td>
+        <td class="muted">Физика</td>
+        <td>10</td>
+        <td>
+          
+            <span class="badge none">не сдано</span>
+          
+        </td>
+      </tr>
+    
+      <tr>
+        <td>4</td>
+        <td><a href="problem-4.html">Кто чемпион?</a></td>
+        <td class="muted">Программирование</td>
+        <td>15</td>
+        <td>
+          
+            <span class="badge none">не сдано</span>
+          
+        </td>
+      </tr>
+    
+      <tr>
+        <td>5</td>
+        <td><a href="problem-5.html">Бессонница</a></td>
+        <td class="muted">Программирование</td>
+        <td>15</td>
+        <td>
+          
+            <span class="badge none">не сдано</span>
+          
+        </td>
+      </tr>
+    
+    </tbody>
+  </table>
+
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Аэрокосмическая олимпиада МФТИ — Аэрокосмическая олимпиада МФТИ VII</p>
+    <p>Вопросы: <a href="mailto:olymp@example.ru">olymp@example.ru</a></p>
+    <p><a href="privacy.html">Политика обработки персональных данных</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

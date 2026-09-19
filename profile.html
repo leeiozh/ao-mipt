@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Личный кабинет</title>
+  <link rel="stylesheet" href="css/main.css">
+  
+  {# Цвет сезона задаётся в админке и подменяет основной цвет бренда.
+     Все производные (кнопки, ссылки) пересчитываются сами — см. tokens.css. #}
+  <style>:root { --color-brand-500: #2f6fed; }</style>
+  
+  
+</head>
+<body>
+<div style="background:#19246a;color:#fff;padding:10px 16px;font-size:14px;
+            text-align:center;font-family:sans-serif">
+  Демонстрационная версия сайта Аэрокосмической олимпиады МФТИ.
+  Данные учебные, формы не отправляются.
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html">
+      
+      <span>АО&nbsp;МФТИ</span>
+    </a>
+    <nav class="main-nav">
+      <a href="online.html">Дистанционный этап</a>
+      <a href="offline.html">Очный тур</a>
+      <a href="lectures.html">Лекции</a>
+      <a href="archive.html">Архив задач</a>
+      <a href="news.html">Новости</a>
+    </nav>
+    <div class="user-nav">
+      
+        <a href="profile.html">Кабинет</a>
+        
+        <form onsubmit="return false" data-demo action="/accounts/logout/" class="inline-form">
+          <input type="hidden" name="csrfmiddlewaretoken" value="RiFhNhNz6lNkIlw2qND0avWRuwbS1IVhskCUwcT9DonrNitVOBArS3oWVGfx6e4b"><button type="submit" class="link-button">Выйти</button>
+        </form>
+      
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  
+  
+<h1>Личный кабинет</h1>
+<p class="muted">student@example.ru · Участник</p>
+
+<div class="grid">
+  <div class="card"><h3>Мои решения</h3><a href="my-submissions.html">Посмотреть →</a></div>
+  <div class="card"><h3>Очный тур</h3><a href="offline.html">Выбрать площадку →</a></div>
+  
+</div>
+
+<h2>Анкета</h2>
+<form onsubmit="return false" data-demo class="form-narrow">
+  <input type="hidden" name="csrfmiddlewaretoken" value="RiFhNhNz6lNkIlw2qND0avWRuwbS1IVhskCUwcT9DonrNitVOBArS3oWVGfx6e4b">
+  <p>
+    <label for="id_last_name">Фамилия:</label>
+    <input type="text" name="last_name" value="Тестов" maxlength="100" required id="id_last_name">
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="id_first_name">Имя:</label>
+    <input type="text" name="first_name" value="Пётр" maxlength="100" required id="id_first_name">
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="id_middle_name">Отчество:</label>
+    <input type="text" name="middle_name" maxlength="100" id="id_middle_name">
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="id_birth_date">Дата рождения:</label>
+    <input type="date" name="birth_date" id="id_birth_date">
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="id_grade">Класс:</label>
+    <input type="number" name="grade" value="10" min="0" id="id_grade">
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="id_school">Школа:</label>
+    <input type="text" name="school" value="Школа №1" maxlength="250" id="id_school">
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="id_city">Город:</label>
+    <input type="text" name="city" value="Москва" maxlength="120" id="id_city">
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="id_region">Регион:</label>
+    <input type="text" name="region" maxlength="120" id="id_region">
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="id_phone">Телефон:</label>
+    <input type="text" name="phone" maxlength="32" id="id_phone">
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="id_telegram">Telegram:</label>
+    <input type="text" name="telegram" maxlength="64" id="id_telegram">
+    
+    
+      
+    
+  </p>
+  <button class="btn" type="submit">Сохранить</button>
+</form>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Аэрокосмическая олимпиада МФТИ — Аэрокосмическая олимпиада МФТИ VII</p>
+    <p>Вопросы: <a href="mailto:olymp@example.ru">olymp@example.ru</a></p>
+    <p><a href="privacy.html">Политика обработки персональных данных</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Регистрация</title>
+  <link rel="stylesheet" href="css/main.css">
+  
+  {# Цвет сезона задаётся в админке и подменяет основной цвет бренда.
+     Все производные (кнопки, ссылки) пересчитываются сами — см. tokens.css. #}
+  <style>:root { --color-brand-500: #2f6fed; }</style>
+  
+  
+</head>
+<body>
+<div style="background:#19246a;color:#fff;padding:10px 16px;font-size:14px;
+            text-align:center;font-family:sans-serif">
+  Демонстрационная версия сайта Аэрокосмической олимпиады МФТИ.
+  Данные учебные, формы не отправляются.
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html">
+      
+      <span>АО&nbsp;МФТИ</span>
+    </a>
+    <nav class="main-nav">
+      <a href="online.html">Дистанционный этап</a>
+      <a href="offline.html">Очный тур</a>
+      <a href="lectures.html">Лекции</a>
+      <a href="archive.html">Архив задач</a>
+      <a href="news.html">Новости</a>
+    </nav>
+    <div class="user-nav">
+      
+        <a href="login.html">Войти</a>
+        <a class="btn btn-small" href="signup.html">Регистрация</a>
+      
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  
+  
+<h1>Регистрация участника</h1>
+<p class="lead prose">После регистрации вы сможете сдавать задачи и записаться на очный тур.</p>
+<p class="muted">Вы учитель и хотите провести тур в своей школе? <a href="signup-organizer.html">Регистрация организатора</a>.</p>
+<form onsubmit="return false" data-demo class="form-wide">
+  <input type="hidden" name="csrfmiddlewaretoken" value="3PyAdcoQsHPtvFjPfxvmv23eUSOJrYRwoUUWu8ElsTbBrbXaZ4v7LwuSfeFbMBU1">
+  <p>
+    <label for="id_email">E-mail:</label>
+    <input type="email" name="email" maxlength="320" autofocus required aria-describedby="id_email_helptext" id="id_email">
+    
+      <span class="helptext" id="id_email_helptext">На него придёт письмо для подтверждения</span>
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="id_password1">Пароль:</label>
+    <input type="password" name="password1" autocomplete="new-password" required aria-describedby="id_password1_helptext" id="id_password1">
+    
+      <span class="helptext" id="id_password1_helptext"><ul><li>Пароль не должен быть слишком похож на другую вашу личную информацию.</li><li>Ваш пароль должен содержать как минимум 8 символов.</li><li>Пароль не должен быть слишком простым и распространенным.</li><li>Пароль не может состоять только из цифр.</li></ul></span>
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="id_password2">Подтверждение пароля:</label>
+    <input type="password" name="password2" autocomplete="new-password" required aria-describedby="id_password2_helptext" id="id_password2">
+    
+      <span class="helptext" id="id_password2_helptext">Для подтверждения введите, пожалуйста, пароль ещё раз.</span>
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="id_last_name">Фамилия:</label>
+    <input type="text" name="last_name" maxlength="100" required id="id_last_name">
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="id_first_name">Имя:</label>
+    <input type="text" name="first_name" maxlength="100" required id="id_first_name">
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="id_consent">Я даю <a href="consent.html" target="_blank">согласие на обработку персональных данных</a> и принимаю <a href="privacy.html" target="_blank">политику обработки персональных данных</a>:</label>
+    <input type="checkbox" name="consent" required id="id_consent">
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="id_grade">Класс:</label>
+    <input type="number" name="grade" min="1" max="11" required id="id_grade">
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="id_school">Школа:</label>
+    <input type="text" name="school" maxlength="250" id="id_school">
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="id_city">Город:</label>
+    <input type="text" name="city" maxlength="120" id="id_city">
+    
+    
+      
+    
+  </p>
+  <button class="btn" type="submit">Зарегистрироваться</button>
+</form>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Аэрокосмическая олимпиада МФТИ — Аэрокосмическая олимпиада МФТИ VII</p>
+    <p>Вопросы: <a href="mailto:olymp@example.ru">olymp@example.ru</a></p>
+    <p><a href="privacy.html">Политика обработки персональных данных</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
